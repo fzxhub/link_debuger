@@ -10,8 +10,9 @@ Includes STLINK JLINK DAPLINK, used for microcontroller debugging.
 1. debuger（jlink、stlink、daplink任意中的一种）
 2. USB转UART（虚拟串口）
 3. USB转RS485（RS485由UART电平转化，因此同一时刻只使用其中一种）
-4. USB HUB（可以再接入其他2个USB设备）
-5. 信号线交叉硬件设计
+4. 微控制器的FLASH以盘符形式显示，实现拖拽下载（jlink、stlink、daplink固件实现）
+5. USB HUB（可以再接入其他2个USB设备）
+6. 信号线交叉硬件设计
 ## 功能说明
 - link功能表示可是使用jlink、stlink、daplink任意一种固件，烧录入不同的link固件，该设备就是可以实现变身。
 - USB转串口功能，因为三种固件都支持虚拟UART功能，因此都可以使用USB转UART（TTL），下载、调试、UART调试集一身。
@@ -19,11 +20,11 @@ Includes STLINK JLINK DAPLINK, used for microcontroller debugging.
 - 在输入USB接口之后绘制了一个USB HUB芯片，芯片是支持一拖四USB HUB，速率达到USB2.0。可通过电阻选择USB HUB是否使用。设计成可选择，主要防止USB HUB的不稳定造成link debugger的不稳定，如USB HUB不稳定或者不使用，可进行硬件上的切换。切换方式通过丝印在背面。
 - 信号线交叉设计主要用于在电路设计时大意将例如UART的RX、TX接错时可切换debuger的电阻即可。切换方式通过丝印在背面。
 - 本设计接口使用了typec USB接口定义了SWD接口、UART接口。在设计你的原型电路时，可以使用typec USB来设计SWD、UART接口后，通过typec USB线连接PC、link debuger、原型电路即可开始下载与调试。
-	- 该设备输出共四个typec USB：
-	- typec USB1：SWD、UART接口
-	- typec USB2：UART接口 
-	- typec USB3：USB HUB接口
-	- typec USB4：USB HUB接口
+- 该设备输出共四个typec USB：
+  - typec USB1：SWD、UART接口
+  - typec USB2：UART接口 
+  - typec USB3：USB HUB接口
+  - typec USB4：USB HUB接口
 ### **接口定义**
 ![avatar](image/link3.png)
 ## 支持固件类型
