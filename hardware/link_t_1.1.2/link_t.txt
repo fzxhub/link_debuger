@@ -1,0 +1,12 @@
+Board Information Report
+Filename     : C:\Users\Yonxiner\Documents\GitHub\link_debuger_stm32\hardware\link_t_1.1.1\link_t.PcbDoc
+Date         : 2021/7/5
+Time         : 19:08:10
+Time Elapsed : 00:00:00
+
+Routing Information
+    Routing completion, 100.00%
+    Connections, 127
+    Connections routed, 127
+    Connections remaining, 0
+count : 4
